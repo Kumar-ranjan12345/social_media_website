@@ -4,8 +4,8 @@ app_name='groups'
 urlpatterns=[
     path('',views.ListGroup.as_view(),name='all'),
     path('new/',views.CreateGroup.as_view(),name='create'),
-    path('posts/in/(?P<slug>[-\w]+)/',views.SingleGroup.as_view(),name='single'),
-    path('join/(?P<slug>[-\w]+)/',views.JoinGroup.as_view(),name='join'),
-    path('leave/(?P<slug>[-\w]+)/',views.LeaveGroup.as_view(),name='leave'),
+    path('posts/in/<slug>/',views.SingleGroup.as_view(),name='single'),
+    path('join/<slug>/',views.JoinGroup.as_view(),name='join'),
+    path('leave/<slug>/',views.LeaveGroup.as_view(),name='leave'),
     
 ]

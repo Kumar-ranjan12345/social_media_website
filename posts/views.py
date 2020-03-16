@@ -53,8 +53,8 @@ class DeletePost(LoginRequiredMixin,SelectRelatedMixin,generic.DeleteView):
 
     def get_queryset(self):
         queryset=super().get_queryset()
-        return queryset.filter(user_id=self.request.user_id)
+        return queryset.filter(user_id=self.request.user.id)
     
     def delete(self,*args,**kwargs):
-        messages.succes(self.request,'Post Deleted')
+        messages.success(self.request,'Post Deleted')
         return super().delete(*args,**kwargs)

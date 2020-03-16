@@ -21,7 +21,7 @@
             <ul class="list-unstyled">
                 {% for other_group in get_other_groups %}
                 <li class="group li-with-bullet">
-                    <a href="{% ul 'groups:single' slug=other_group.slug %}"></a>
+                    <a href="{% url 'groups:single' slug=other_group.slug %}"></a>
                 </li>
                 {% endfor %}
             </ul>
