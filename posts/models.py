@@ -8,11 +8,11 @@ User=get_user_model()
 # Create your models here.
 
 class Post(models.Model):
-    user=models.ForeignKey(User,related_name='posts')
+    user=models.ForeignKey(User,related_name='posts',on_delete=1)
     created_at=models.DateTimeField(auto_now=True)
     message=models.TextField()
     message_html=models.TextField(editable=False)
-    group=models.ForeignKey(Group,related_name='posts',null=True,blank=True)
+    group=models.ForeignKey(Group,related_name='posts',null=True,blank=True,on_delete=1)
 
     def __str__(self):
         return self.message
